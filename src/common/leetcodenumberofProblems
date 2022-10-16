@@ -1,0 +1,24 @@
+ /*
+    54,56,350,349,9,208,3, 253, 394,// 1047, 316,772,20,5,234,202,1,14,216
+ */ //208 imp,216,151,1710,242,136,187,509,1046
+ Combination SumIII 216
+ Splitwise
+ Spiral Matrix
+ Palindrome Number
+ Reverse LinkList
+ Kth frequent elements in a list
+ 224. Basic Calculator
+ Island problem
+ Median in a data stream
+ Matrix Compression
+ Trie Data Structure implementation, insert and return list of matching words
+ IsValid braces w/o using stack.
+ IQ question:
+ There are 100 bulbs arranged in a row. Each bulb has its own switch and is currently turned off.  In the first round, you turn every switch on. In the second round, you flip the switch of every second bulb (i.e. bulb 2, 4, 6, 8 and so on). In the third round, you flip the switch of every third bulb and so on. How many bulbs are turned on after 88 rounds ?
+ (1,4,9,16,25,36,49,64, 81 =(9+11 =20 bulbs were lit after 88 pass )
+ Largest Number , leetcode 179
+ Longest Palindromic substring
+ Friend relationship, adjacency matrix type
+ Check if two strings are anagrams(a-zA-Z and special characters including space, ignore space)
+  Reverse the words in String
+ The sliding window problem , retrieve the smallest subarray greater than the target in Array.

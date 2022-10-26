@@ -1,6 +1,7 @@
 package common;
 
 public class sumwithoutusingplus {
+    //371 on leetcode
     public static void main(String[] args) {
         System.out.println(sum(5,5));
     }

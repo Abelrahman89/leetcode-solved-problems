@@ -48,7 +48,7 @@ public class Employee {
                 new Employee("Hassan", 27, 11000),
                 new Employee("Ahmed", 30, 11000));
         System.out.println(employeeList);
-        Collections.sort(employeeList, (Employee e1, Employee e2) -> e1.getEmployeeName().compareTo(e2.getEmployeeName()));
+        Collections.sort(employeeList, ( e1,  e2) -> e1.getEmployeeName().compareTo(e2.getEmployeeName()));
         System.out.println(employeeList);
 
         Collections.sort(employeeList, (Employee e1, Employee e2) -> e1.getAge() - e2.getAge());

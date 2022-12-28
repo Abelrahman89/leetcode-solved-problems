@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Solution {
     public static List<List<String>> groupAnagrams2(String[] strs) {
-
+        //TC = NK, SC = NK
         List<List<String>> res = new ArrayList<>();
         if (strs.length == 0) return res;
         HashMap<String, List<String>> map = new HashMap<>();
@@ -48,6 +48,7 @@ has context menu
      */
 
     public static List<List<String>> groupAnagrams(String[] words) {
+        //TC = NKLogK, SC = NK
         if (words == null || words.length == 0)
             return null;
         HashMap<String, ArrayList<String>> wordsMap = new HashMap<String, ArrayList<String>>();
@@ -55,14 +56,16 @@ has context menu
             char[] wordToArray = words[i].toCharArray();
             Arrays.sort(wordToArray);
             String wordAfterSorted = String.valueOf(wordToArray);
-
             if (wordsMap.containsKey(wordAfterSorted))
-                wordsMap.get(wordAfterSorted).add(words[i]);
-            else {
-                ArrayList<String> wordToBeAdded = new ArrayList<>();
-                wordToBeAdded.add(words[i]);
-                wordsMap.put(wordAfterSorted, wordToBeAdded);
-            }
+                wordsMap.put(wordAfterSorted, new ArrayList<>());
+            wordsMap.get(wordAfterSorted).add(words[i]);
+//            if (wordsMap.containsKey(wordAfterSorted))
+//                wordsMap.get(wordAfterSorted).add(words[i]);
+//            else {
+//                ArrayList<String> wordToBeAdded = new ArrayList<>();
+//                wordToBeAdded.add(words[i]);
+//                wordsMap.put(wordAfterSorted, wordToBeAdded);
+//            }
         }
         return new ArrayList<>(wordsMap.values());
     }

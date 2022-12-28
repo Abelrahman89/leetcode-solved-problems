@@ -26,5 +26,6 @@ public class BiggestNumberFromIntegerArray {
 
 
         return Integer.valueOf(result);
+
     }
 }

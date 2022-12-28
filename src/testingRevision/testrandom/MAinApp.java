@@ -1,5 +1,6 @@
 package testingRevision.testrandom;
 
+import java.math.BigDecimal;
 import java.util.*;
 
 public class MAinApp {
@@ -114,8 +115,9 @@ public class MAinApp {
         }
 
     public static void main(String[] args) {
-        int [] arr1 = new int [] {1, 2, 1, 2};
-        counterMethod(arr1);
+        BigDecimal total =BigDecimal.ZERO;
+//        int [] arr1 = new int [] {1, 2, 1, 2};
+//        counterMethod(arr1);
 
 //        List<Integer> list1 = new ArrayList<>(List.of(1,1,1,1,2,3,4,4,4,4,4,4,5));
 //        System.out.println(Arrays.toString(maxFrequency(list1)));

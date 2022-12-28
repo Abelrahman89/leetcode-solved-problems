@@ -33,6 +33,7 @@ public class EmployeeWithHash {
         employeeMap.put(e1, "First Employee");
 
         System.out.println(employeeMap.get(e1));
+        System.out.println(employeeMap.get(e2));
         employeeMap.put(e2, "Second Employee");
         System.out.println(employeeMap.get(e2));
         System.out.println(employeeMap.size());

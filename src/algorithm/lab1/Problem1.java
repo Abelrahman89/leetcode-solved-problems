@@ -24,6 +24,15 @@ public class Problem1 {
         int w[] = new int[]{1, 2, 4};
         int W = 4;
         System.out.println(knapsack(s, v, w, W));
+
+
+//        int x = 121;
+//        int reversedNumber = 0;
+//        while (x > 0) {
+//            reversedNumber = reversedNumber * 10 + x % 10;
+//            x /= 10;
+
+
     }
 }
 

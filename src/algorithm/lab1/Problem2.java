@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 public class Problem2 {
     public static ArrayList<Integer> knapsack(int[] s, int[] v, int[] w, int W) {
-
         ArrayList<Integer> result = new ArrayList<Integer>();
         int last = 0;
         int max = 0;
@@ -14,8 +13,6 @@ public class Problem2 {
                 max += v[i];
                 result.add(s[i]);
             } else break;
-
-
         }
         return result;
     }

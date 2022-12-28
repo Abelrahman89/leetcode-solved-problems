@@ -30,9 +30,9 @@ public class EmployeeNoHash {
 
     public static void main(String[] args) {
         EmployeeNoHash e1 = new EmployeeNoHash(1, 500, "Ahmed");
-        EmployeeNoHash e2 = new EmployeeNoHash(1, 500, "Mohammed");
-        System.out.println(e1.equals(e2));
-       // System.out.println(e1 == e2);
+        EmployeeNoHash e2 = new EmployeeNoHash(1, 500, "Ahmed");
+        System.out.println(e1.equals(e2)); // if there is no override equal method  will return false
+        System.out.println(e1 == e2);
 
         HashMap<EmployeeNoHash, String> employeeMap = new HashMap<>();
         employeeMap.put(e1, "First Employee");

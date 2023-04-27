@@ -1,0 +1,66 @@
+package com.example.pathselect;
+
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class TextToExcelConverter {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        //System.out.print("Enter the path of the text file: ");
+        String filePath = "C:Users/abdel/Downloads/test/tst.txt";//scanner.nextLine();
+
+        List<String[]> data = new ArrayList<>();
+        try (BufferedReader br = new BufferedReader(new FileReader(new File(filePath)))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] rowData = line.split(",");
+                data.add(rowData);
+            }
+        } catch (IOException e) {
+            System.err.println("Failed to read file: " + e.getMessage());
+            return;
+        }
+
+        Workbook workbook = new XSSFWorkbook();
+        Sheet sheet = workbook.createSheet("Data");
+
+        // Add header row
+        Row headerRow = sheet.createRow(0);
+        Cell titleCell = headerRow.createCell(0);
+        titleCell.setCellValue("Title");
+        Cell valueCell = headerRow.createCell(1);
+        valueCell.setCellValue("Value");
+
+        // Add data rows
+        int rownum = 1;
+        for (String[] rowData : data) {
+            Row row = sheet.createRow(rownum++);
+            int cellnum = 0;
+            for (String value : rowData) {
+                Cell cell = row.createCell(cellnum++);
+                cell.setCellValue(value);
+            }
+        }
+       // System.out.print("Enter the path of the output Excel file: ");
+        String outputFilePath ="C:Users/abdel/Downloads/test/result.xlsx" ;//scanner.nextLine();
+
+        try (FileOutputStream outputStream = new FileOutputStream(new File(outputFilePath))) {
+            workbook.write(outputStream);
+        } catch (IOException e) {
+            System.err.println("Failed to write Excel file: " + e.getMessage());
+            return;
+        }
+
+        System.out.println("Excel file created successfully.");
+    }
+
+}

@@ -1,55 +1,16 @@
-package com.example.pathselect;
+Sheet sheet = workbook.createSheet("Sheet1");
 
-import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
+        Row headerRow = sheet.createRow(0);
+        Cell titleCell = headerRow.createCell(0);
+        titleCell.setCellValue("Title");
+        Cell valueCell = headerRow.createCell(1);
+        valueCell.setCellValue("Value");
 
-
-public class TextToExcelConverter {
-
-    public static void main(String[] args) {
-
-
-        //System.out.print("Enter the path of the text file: ");
-        String filePath = "C:Users/abdel/Downloads/test/tst.txt";//scanner.nextLine();
-
-
-
-        List<String[]> data = new ArrayList<>();
-        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
-            String line;
-            while ((line = reader.readLine()) != null) {
-                String[] rowData = line.split(",");
-                data.add(rowData);
+        for (int i = 0; i < data.size(); i++) {
+            String[] rowData = data.get(i);
+            Row dataRow = sheet.createRow(i + 1);
+            for (int j = 0; j < rowData.length; j++) {
+                Cell cell = dataRow.createCell(j);
+                cell.setCellValue(rowData[j]);
             }
-        } catch (IOException e) {
-            System.err.println("Failed to read file: " + e.getMessage());
-            return;
         }
-        String outputFilePath ="C:Users/abdel/Downloads/test/result.xlsx" ;//scanner.nextLine();
-
-        try (FileOutputStream outputStream = new FileOutputStream(new File(outputFilePath));
-             OutputStreamWriter writer = new OutputStreamWriter(outputStream);
-             BufferedWriter bufferedWriter = new BufferedWriter(writer)) {
-             //Write the header row to the Excel file
-            bufferedWriter.write("Title,Value");
-            bufferedWriter.newLine();
-
-            // Write the data rows to the Excel file
-            for (String[] rowData : data) {
-                String rowString = String.join(",", rowData);
-                bufferedWriter.write(rowString);
-                bufferedWriter.newLine();
-            }
-        } catch (IOException e) {
-            System.err.println("Failed to write Excel file: " + e.getMessage());
-            return;
-        }
-
-        System.out.println("Excel file created successfully.");
-    }
-}
-
-
-
-
